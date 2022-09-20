@@ -41,8 +41,11 @@
            (case (s-exp->symbol (first ls))
              [(+) (plusS (parse (second ls)) (parse (third ls)))]
              [(*) (multS (parse (second ls)) (parse (third ls)))]
-             [(-) (subS (parse (second ls)) (parse (third ls)))]
-             [(~) (minusS (parse (second ls)))]
+             [(-) (case [length ls]
+                    [(2) (minusS (parse (second ls)))]
+                    [(3) (subS (parse (second ls)) (parse (third ls)))]
+                    [else (error 'parse "operación aritmética malformada")]
+                    )]
              [else (error 'parse "operación aritmética malformada")]))]
         [else (error 'parse "expresión aritmética malformada")]
         )
