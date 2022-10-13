@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Ejercicios PROC}
+\author{Sergio Adair López Sánchez}
+\date{11 de octubre de 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Ejercicios del libro EOPL 3ra ed. sección 3.3 PROC: A Language with Procedures }
+
+\textbf{3.20}  Write a Curried
+procedure that takes two arguments and returns their sum.
+
+\begin{verbatim}
+
+    proc (x)
+        proc (y)
+            -(x, -(0, y))
+
+\end{verbatim}
+
+\end{document}
