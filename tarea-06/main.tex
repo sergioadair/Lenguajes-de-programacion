@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{color}
 
 \title{Problemas EXPLICIT-REFS}
 \author{Sergio Adair López Sánchez}
@@ -11,10 +12,21 @@
 
 \section{Ejercicios del libro EOPL 3ra ed. sección 4: State}
 
-\textbf{4.8}  Show exactly where in our implementation of the store these operations take linear time rather than constant time.
+\textbf{4.8}  Muestra exactamente en qué parte de nuestra implementación del almacenamiento las operaciones toman tiempo lineal en lugar de tiempo constante.
 
 \begin{verbatim}
+newref :
+    (length the-store)
+    (append the-store (list val))
 
+deref :
+    (list-ref the-store ref)
+
+setref! :
+    (setref-inner
+        (cdr store1) (- ref1 1))
+        
 \end{verbatim}
+\textbf{4.9}  Implementa el almacenamiento en tiempo constante representandolo como un vector de Racket. ¿Qué perdemos al usar esta representación?
 
 \end{document}
