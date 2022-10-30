@@ -31,3 +31,5 @@
                    ref
                    (report-invalid-reference ref the-store))
                val))
+
+(provide (all-defined-out))
