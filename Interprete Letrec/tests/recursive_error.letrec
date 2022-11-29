@@ -1,3 +1,0 @@
-letrec f(x) = -((f 1), (f x))
-in letrec g(y) = (g x)
-    in (f 0)
